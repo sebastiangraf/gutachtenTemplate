@@ -1,0 +1,65 @@
+% Dokumenteinstellungen und Anpassungen
+\input{resources/settings/settings}
+\input{resources/styles/adjustments}
+
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{color}
+\usepackage{listings}
+\usepackage{eso-pic}
+
+\lstset{literate=%
+  {Ö}{{\"O}}1
+  {Ä}{{\"A}}1
+  {Ü}{{\"U}}1
+  {ß}{{\ss}}1
+  {ü}{{\"u}}1
+  {ä}{{\"a}}1
+  {ö}{{\"o}}1
+}
+
+
+% Neuer Befehl um Subsubsubkapitel schreiben zu können
+\newcommand{\subsubsubsection}[1]{\paragraph{#1}\mbox{}\\}
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+\begin{document}
+\hypersetup{pageanchor=false}
+
+\include{titles/deckblatt}
+
+\pagenumbering{gobble}
+
+% Titelblatt erzeugen
+\maketitle
+\newpage
+
+\thispagestyle{empty}
+\newpage
+\hypersetup{pageanchor=true}
+\pagenumbering{Roman}
+\tableofcontents
+\newpage
+\listoffigures
+\newpage
+
+% Kapitel einfügen
+\pagenumbering{arabic}
+\input{chapter/0_ Auftragsspezifikation.tex}
+\newpage
+
+\input{chapter/1_Ermittlungsergebnisse.tex}
+\newpage
+
+\input{chapter/2_Untersuchungsobjekte.tex}
+\newpage
+
+\input{chapter/3_AbschliessendeBemerkungen.tex}
+\newpage
+
+% Bibliografie im .bib Format einfügen
+\bibliography{lit}
+
+\end{document}

@@ -1,0 +1,13 @@
+\setlength{\headheight}{18pt}
+
+%Zusätzliche Farben
+\definecolor{darkgreen}{RGB}{0,100,0}
+\setlength{\emergencystretch}{15pt}
+
+%Anpassungen für das Abkürzungsverzeichnis
+\newglossarystyle{dottedlocations}{%
+	\renewcommand*{\glossaryentryfield}[5]{%
+		\item[\glsentryitem{##1}\glstarget{##1}{##2}] \emph{##3}%
+		\unskip\leaders\hbox to 2.9mm{\hss.}\hfill##5}%
+	\renewcommand*{\glsgroupskip}{}%
+}
